@@ -27,10 +27,11 @@ jobs:
           base: header, activity, community, repositories, metadata
           repositories_forks: yes
 
-          # core
+          # The isocalendar plugin displays an isometric view of your commits calendar, along with a few additional stats like current streak and commit average per day.
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year # Display full year instead of half year
 
+          # The languages plugin displays which programming languages you use the most across all your repositories.
           plugin_languages: yes
           plugin_languages_ignored: html, css, javascript               # List of languages to ignore
           # plugin_languages_skipped: my-test-repo                       # List of repositories to skip
@@ -38,6 +39,7 @@ jobs:
           plugin_languages_details: bytes-size, percentage             # Additionally display total bytes size and percentage
           # plugin_languages_threshold: 2%                               # Hides all languages less than 2%
 
+          # The coding habits plugin display metrics based on your recent activity, such as active hours or languages recently used.
           plugin_habits: yes
           plugin_habits_from: 1000      # Use 200 events to compute habits
           plugin_habits_days: 90        # Keep only events from last 14 days
@@ -45,19 +47,17 @@ jobs:
           plugin_habits_charts: yes     # Display charts section
           config_timezone: Europe/Berlin
 
+          # The stars plugin displays your recently starred repositories.
           plugin_stars: yes
           plugin_stars_limit: 4 # Limit to 4 entries
 
-          plugin_topics: yes
-          plugin_topics_sort: stars    # Sort by most starred topics
-          plugin_topics_mode: mastered # Display icons instead of labels
-          plugin_topics_limit: 0       # Disable limitations
-
+          # The reactions plugin displays overall reactions on your recent issues and issue comments.
           plugin_reactions: yes
           plugin_reactions_limit: 200                 # Compute reactions over last 200 issue comments
           plugin_reactions_days: 90                   # Compute reactions on issue comments posted less than 14 days ago
           plugin_reactions_details: count, percentage # Display reactions count and percentage
 
+          # The followup plugin displays the ratio of open/closed issues and the ratio of open/merged pull requests across all your repositories, which shows if they're well-maintained or not.
           plugin_followup: yes
 
           # The lines of code plugin displays the number of lines of code you have added and removed across all of your repositories.
@@ -65,3 +65,6 @@ jobs:
 
           # The repositories traffic plugin displays the number of page views across your repositories.
           plugin_traffic: yes
+
+          # The stargazers plugin displays your stargazers evolution across all of your repositories over the last two weeks.
+          plugin_stargazers: yes
