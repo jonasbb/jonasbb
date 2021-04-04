@@ -52,3 +52,16 @@ jobs:
           plugin_topics_sort: stars    # Sort by most starred topics
           plugin_topics_mode: mastered # Display icons instead of labels
           plugin_topics_limit: 0       # Disable limitations
+
+          plugin_reactions: yes
+          plugin_reactions_limit: 200                 # Compute reactions over last 200 issue comments
+          plugin_reactions_days: 90                   # Compute reactions on issue comments posted less than 14 days ago
+          plugin_reactions_details: count, percentage # Display reactions count and percentage
+
+          plugin_followup: yes
+
+          # The lines of code plugin displays the number of lines of code you have added and removed across all of your repositories.
+          plugin_lines: yes
+
+          # The repositories traffic plugin displays the number of page views across your repositories.
+          plugin_traffic: yes
