@@ -18,7 +18,6 @@ jobs:
           # Options
           user: jonasbb
           template: classic
-          config_timezone: Europe/Berlin
           config_gemoji: yes # use additional non-unicode emoji
           retries: 3
           retries_delay: 300
@@ -33,8 +32,23 @@ jobs:
           plugin_isocalendar_duration: full-year # Display full year instead of half year
 
           plugin_languages: yes
-          plugin_languages_ignored: html, css                          # List of languages to ignore
+          plugin_languages_ignored: html, css, javascript               # List of languages to ignore
           # plugin_languages_skipped: my-test-repo                       # List of repositories to skip
           # plugin_languages_colors: "0:orange, javascript:#ff0000, ..." # Make most used languages orange and JavaScript red
           plugin_languages_details: bytes-size, percentage             # Additionally display total bytes size and percentage
           # plugin_languages_threshold: 2%                               # Hides all languages less than 2%
+
+          plugin_habits: yes
+          plugin_habits_from: 1000      # Use 200 events to compute habits
+          plugin_habits_days: 90        # Keep only events from last 14 days
+          plugin_habits_facts: yes      # Display facts section
+          plugin_habits_charts: yes     # Display charts section
+          config_timezone: Europe/Berlin
+
+          plugin_stars: yes
+          plugin_stars_limit: 4 # Limit to 4 entries
+
+          plugin_topics: yes
+          plugin_topics_sort: stars    # Sort by most starred topics
+          plugin_topics_mode: mastered # Display icons instead of labels
+          plugin_topics_limit: 0       # Disable limitations
