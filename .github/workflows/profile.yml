@@ -24,7 +24,7 @@ jobs:
           use_prebuilt_image: yes # faster execution
 
           # base
-          base: header, activity, community, repositories, metadata
+          base: header, activity, community, metadata # repositories
           repositories_forks: yes
 
           # The isocalendar plugin displays an isometric view of your commits calendar, along with a few additional stats like current streak and commit average per day.
@@ -58,7 +58,7 @@ jobs:
           plugin_reactions_details: count, percentage # Display reactions count and percentage
 
           # The followup plugin displays the ratio of open/closed issues and the ratio of open/merged pull requests across all your repositories, which shows if they're well-maintained or not.
-          plugin_followup: yes
+          plugin_followup: no
 
           # The lines of code plugin displays the number of lines of code you have added and removed across all of your repositories.
           plugin_lines: yes
