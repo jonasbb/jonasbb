@@ -1,0 +1,27 @@
+name: "GitHub Readme Stats"
+on:
+  # Schedule updates (each hour)
+  schedule: [{ cron: "0 0 * * *" }]
+  # Lines below let you run workflow manually and on each commit
+  workflow_dispatch:
+  push: { branches: ["master", "main"] }
+permissions: read-all
+
+jobs:
+  grs:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    name: Generate Stats
+    steps:
+      - name: Generate Stats (light mode)
+        uses: Zo-Bro-23/grs-action@93340ca4602190540e123fd382c2639533ce8939
+        id: generate
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=graywhite'
+          path: grs-serde_with-light.svg
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
