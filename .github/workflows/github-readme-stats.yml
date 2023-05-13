@@ -26,6 +26,12 @@ jobs:
           card: repo
           options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=graywhite'
           path: ./grs-serde_with-light.svg
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Add repo images"
       - uses: actions/upload-artifact@master
         with:
           name: stats
