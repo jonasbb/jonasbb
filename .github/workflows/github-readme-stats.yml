@@ -23,8 +23,13 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          card: repo
           options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=graywhite'
-          path: grs-serde_with-light.svg
+          path: ./grs-serde_with-light.svg
+      - uses: actions/upload-artifact@master
+        with:
+          name: stats
+          path: ./grs-serde_with-light.svg
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
