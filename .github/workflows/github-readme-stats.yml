@@ -14,45 +14,41 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate Stats
     steps:
-      - uses: actions/checkout@v3
-        with:
-          # persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - uses: actions/checkout@v4
+
       - name: Generate Stats serde_with light
-        uses: Zo-Bro-23/grs-action@93340ca4602190540e123fd382c2639533ce8939
+        uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           card: repo
           options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=graywhite'
           path: ./grs-serde_with-light.svg
       - name: Generate Stats serde_with dark
-        uses: Zo-Bro-23/grs-action@93340ca4602190540e123fd382c2639533ce8939
+        uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           card: repo
           options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=apprentice'
           path: ./grs-serde_with-dark.svg
       - name: Generate Stats pre-commit-latex-hooks light
-        uses: Zo-Bro-23/grs-action@93340ca4602190540e123fd382c2639533ce8939
+        uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           card: repo
           options: 'username=jonasbb&repo=pre-commit-latex-hooks&show_owner=true&cache_seconds=86400&theme=graywhite'
           path: ./grs-pre-commit-latex-hooks-light.svg
       - name: Generate Stats pre-commit-latex-hooks dark
-        uses: Zo-Bro-23/grs-action@93340ca4602190540e123fd382c2639533ce8939
+        uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           card: repo
           options: 'username=jonasbb&repo=pre-commit-latex-hooks&show_owner=true&cache_seconds=86400&theme=apprentice'
           path: ./grs-pre-commit-latex-hooks-dark.svg
+
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "Add repo images" || true
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push
