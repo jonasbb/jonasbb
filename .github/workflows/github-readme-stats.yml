@@ -20,28 +20,28 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          card: repo
+          card: pin
           options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=graywhite'
           path: ./grs-serde_with-light.svg
       - name: Generate Stats serde_with dark
         uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          card: repo
+          card: pin
           options: 'username=jonasbb&repo=serde_with&show_owner=true&cache_seconds=86400&theme=apprentice'
           path: ./grs-serde_with-dark.svg
       - name: Generate Stats pre-commit-latex-hooks light
         uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          card: repo
+          card: pin
           options: 'username=jonasbb&repo=pre-commit-latex-hooks&show_owner=true&cache_seconds=86400&theme=graywhite'
           path: ./grs-pre-commit-latex-hooks-light.svg
       - name: Generate Stats pre-commit-latex-hooks dark
         uses: readme-tools/github-readme-stats-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          card: repo
+          card: pin
           options: 'username=jonasbb&repo=pre-commit-latex-hooks&show_owner=true&cache_seconds=86400&theme=apprentice'
           path: ./grs-pre-commit-latex-hooks-dark.svg
 
